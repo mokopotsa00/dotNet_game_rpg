@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using dotNet_game_rpg.Services.CharacterService;
+using AutoMapper;
 
 namespace dotNet_course_pjct
 {
@@ -27,6 +28,7 @@ namespace dotNet_course_pjct
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper( typeof(Startup));
             services.AddScoped<ICharacterService, CharacterService>();
         }
 
